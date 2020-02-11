@@ -13,6 +13,7 @@ const formatStr = (str) => {
 // console.log(formatStr('get1_install2_app3_list4_by5_android6'));
 // 2，不使用任何循环控制语句和迭代器的情况下实现一个0到1000的数组赋值。
 const fillArr = () => {
+  // Array(1000) 是空数组，下面这种会填充 undefined
   return Object.keys(Array.apply(null, { length: 1000 }));
 };
 
@@ -66,15 +67,16 @@ export const isEqual1 = (arg1, arg2) => {
 //   return JSON.stringify(obj1) === JSON.stringify(obj2);
 // }
 
-
-
-// console.log(isEqualObj([{ a: 1, b: 2 }, { b: 2, a: 1 }], [{ a: 1, b: 2 }, { b: 2, a: 1, c: 1 }]));
-// console.log(isEqual1([1, 2, 3], [1, 2, 3]));
-// console.log(isEqual2(null, null));
-// let obj = { b: 2, a: 1, c: 1, d: 11 }
-// for (const key in obj) {
-//   if (object.hasOwnProperty(key)) {
-//     const element = object[key];
-
-//   }
+// 请用 javascript 实现一个函数 parseUrl(url) ，将一段 url 字符串解析为 Object。
+// parseUrl("http://www.xiyanghui.com/product/list?id=123456&sort=discount#title");
+// {
+//   protocol: "http",
+//     host: "www.xiyanghui.com",
+//       path: "/product/list",
+//         query: {
+//     id: "123456",
+//       sort: "discount"
+//   },
+//   hash: "title"
 // }
+
