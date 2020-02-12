@@ -1,3 +1,4 @@
+// 解析 url
 function getUrlObject(url) {
   //首先解析整个字符串我们一点一点对应来看
   //第一个括号(\w+) \w匹配任意ascii字符 +号代表一个或多个，这里就是匹配https或者http
@@ -36,4 +37,17 @@ function getUrlObject(url) {
   return result;
 }
 var url = 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E5%93%88%E5%93%88#top';
-console.log(getUrlObject(url));
+// console.log(getUrlObject(url));
+
+// 1，输入：“get1_install2_app3_list4_by5_android6”
+// （每个单词后面总会携带一个数字，只有偶数才删掉），
+// 写一个函数实现输出"get1InstallApp3ListBy5Android"。
+const formatStr = (str) => {
+  return str.replace(/(\d*)_(\w)|(\d*[02468]$)/g, (a, b, c) => {
+    // console.log(a, b, c);
+    return b === undefined ? '' : b % 2 === 0 ? c.toUpperCase() : b + c.toUpperCase();
+  });
+};
+
+// str.replace(/\d*[02468]/g, ''); // 偶数
+console.log(formatStr('get1_install12_app3_list4_by5_android11'));

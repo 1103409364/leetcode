@@ -1,15 +1,3 @@
-// 面试题
-// 1，输入：“get1_install2_app3_list4_by5_android6”（每个单词后面总会携带一个数字，只有偶数才删掉），
-// 写一个函数实现输出"get1InstallApp3ListBy5Android"。
-const formatStr = (str) => {
-  return str.split('_').map((item, index) => {
-    if (item.substr(-1) % 2 === 0) {
-      return item.replace(/\d$/, '');
-    }
-    return item;
-  }).join('');
-};
-
 // console.log(formatStr('get1_install2_app3_list4_by5_android6'));
 // 2，不使用任何循环控制语句和迭代器的情况下实现一个0到1000的数组赋值。
 const fillArr = () => {
